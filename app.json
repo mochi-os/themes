@@ -1,0 +1,41 @@
+// Mochi Themes app
+// Provides color themes for the Mochi platform
+
+{
+	"version": "0.1",
+	"label": "app_name",
+	"paths": ["themes"],
+
+	"architecture": {"engine": "starlark", "version": 4},
+	"execute": [],
+
+	"themes": [
+		{
+			"id": "blue",
+			"label": "theme_blue",
+			"hue": 250,
+			"chroma": 0.16,
+			"hue_bg": 250,
+			"preview": "#6366f1",
+			"background": "blue.svg"
+		},
+		{
+			"id": "teal",
+			"label": "theme_teal",
+			"hue": 185,
+			"chroma": 0.12,
+			"hue_bg": 175,
+			"preview": "#14b8a6",
+			"background": "teal.svg",
+			"icons": {
+				"chat": "teal/chat.svg",
+				"feeds": "teal/feeds.svg"
+			}
+		}
+	],
+
+	"actions": {
+		"backgrounds": {"files": "backgrounds", "cache": "static", "public": true},
+		"icons": {"files": "icons", "cache": "static", "public": true}
+	}
+}
