@@ -2,7 +2,7 @@
 // Provides color themes for the Mochi platform
 
 {
-	"version": "1.0",
+	"version": "1.2",
 	"label": "app_name",
 	"paths": ["themes"],
 
@@ -17,7 +17,8 @@
 			"chroma": 0.16,
 			"hue_bg": 250,
 			"preview": "#6366f1",
-			"background": "blue.svg"
+			"background": "blue.svg",
+			"background_dark": "blue-dark.svg"
 		},
 		{
 			"id": "teal",
@@ -27,15 +28,11 @@
 			"hue_bg": 175,
 			"preview": "#14b8a6",
 			"background": "teal.svg",
-			"icons": {
-				"chat": "teal/chat.svg",
-				"feeds": "teal/feeds.svg"
-			}
+			"background_dark": "teal-dark.svg"
 		}
 	],
 
 	"actions": {
-		"backgrounds": {"files": "backgrounds", "cache": "static", "public": true},
-		"icons": {"files": "icons", "cache": "static", "public": true}
+		"backgrounds": {"files": "backgrounds", "cache": "static", "public": true}
 	}
 }
