@@ -2,7 +2,7 @@
 // Provides color themes for the Mochi platform
 
 {
-	"version": "0.1",
+	"version": "1.0",
 	"label": "app_name",
 	"paths": ["themes"],
 
