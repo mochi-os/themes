@@ -17,6 +17,7 @@
 			"chroma": 0.16,
 			"hue_bg": 250,
 			"preview": "#6366f1",
+			"preview_dark": "#818cf8",
 			"background": "blue.svg",
 			"background_dark": "blue-dark.svg"
 		},
@@ -27,8 +28,20 @@
 			"chroma": 0.12,
 			"hue_bg": 175,
 			"preview": "#14b8a6",
+			"preview_dark": "#2dd4bf",
 			"background": "teal.svg",
 			"background_dark": "teal-dark.svg"
+		},
+		{
+			"id": "neutral",
+			"label": "theme_neutral",
+			"hue": 0,
+			"chroma": 0,
+			"hue_bg": 0,
+			"preview": "#6b7280",
+			"preview_dark": "#9ca3af",
+			"background": "neutral.svg",
+			"background_dark": "neutral-dark.svg"
 		}
 	],
 
