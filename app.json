@@ -9,6 +9,17 @@
 	"architecture": {"engine": "starlark", "version": 4},
 	"execute": [],
 
+	// Each theme defines the complete visual style users choose from.
+	// Fields:
+	//   id            — unique identifier (used in user preferences)
+	//   label         — i18n key resolved from labels/<lang>.conf
+	//   hue           — primary color hue in OKLCH color space (0–360)
+	//   chroma        — color saturation (0 = grey, ~0.2 = vivid)
+	//   hue_bg        — background/secondary hue (can differ from primary)
+	//   preview       — hex color shown in the preferences Theme button
+	//   spacing       — layout density: "compact" | "comfortable" | "spacious"
+	//   border_radius — corner rounding: "0rem" | "0.375rem" | "0.75rem" | "1.75rem"
+	//   background    — optional SVG filename served from the backgrounds/ folder
 	"themes": [
 		{
 			"id": "blue",
@@ -17,6 +28,8 @@
 			"chroma": 0.16,
 			"hue_bg": 250,
 			"preview": "#6366f1",
+			"spacing": "comfortable",
+			"border_radius": "0.75rem",
 			"background": "blue.svg",
 			"background_dark": "blue-dark.svg"
 		},
@@ -27,8 +40,30 @@
 			"chroma": 0.12,
 			"hue_bg": 175,
 			"preview": "#14b8a6",
+			"spacing": "compact",
+			"border_radius": "0.375rem",
 			"background": "teal.svg",
 			"background_dark": "teal-dark.svg"
+		},
+		{
+			"id": "rose",
+			"label": "theme_rose",
+			"hue": 350,
+			"chroma": 0.15,
+			"hue_bg": 345,
+			"preview": "#f43f5e",
+			"spacing": "spacious",
+			"border_radius": "1.75rem"
+		},
+		{
+			"id": "violet",
+			"label": "theme_violet",
+			"hue": 270,
+			"chroma": 0.15,
+			"hue_bg": 265,
+			"preview": "#8b5cf6",
+			"spacing": "compact",
+			"border_radius": "0rem"
 		}
 	],
 
