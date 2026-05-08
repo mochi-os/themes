@@ -2,7 +2,7 @@
 // Provides themes for the Mochi platform
 
 {
-	"version": "1.6",
+	"version": "1.7",
 	"label": "app.name",
 	"paths": ["themes"],
 
@@ -25,11 +25,11 @@
 			"id": "blue",
 			"label": "theme_blue",
 			"hue": 250,
-			"chroma": 0.16,
-			"hue_bg": 250,
+			"chroma": 0.15,
+			"hue_bg": 245,
 			"preview": "#6366f1",
 			"spacing": "comfortable",
-			"border_radius": "0.75rem",
+			"border_radius": "0.375rem",
 			"background": "blue.svg",
 			"background_dark": "blue-dark.svg"
 		},
@@ -37,10 +37,10 @@
 			"id": "teal",
 			"label": "theme_teal",
 			"hue": 185,
-			"chroma": 0.12,
-			"hue_bg": 175,
+			"chroma": 0.15,
+			"hue_bg": 180,
 			"preview": "#14b8a6",
-			"spacing": "compact",
+			"spacing": "comfortable",
 			"border_radius": "0.375rem",
 			"background": "teal.svg",
 			"background_dark": "teal-dark.svg"
@@ -52,8 +52,10 @@
 			"chroma": 0.15,
 			"hue_bg": 345,
 			"preview": "#f43f5e",
-			"spacing": "spacious",
-			"border_radius": "1.75rem"
+			"spacing": "comfortable",
+			"border_radius": "0.375rem",
+			"background": "rose.svg",
+			"background_dark": "rose-dark.svg"
 		},
 		{
 			"id": "violet",
@@ -62,8 +64,10 @@
 			"chroma": 0.15,
 			"hue_bg": 265,
 			"preview": "#8b5cf6",
-			"spacing": "compact",
-			"border_radius": "0rem"
+			"spacing": "comfortable",
+			"border_radius": "0.375rem",
+			"background": "violet.svg",
+			"background_dark": "violet-dark.svg"
 		}
 	],
 
