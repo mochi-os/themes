@@ -9,17 +9,34 @@
 	"architecture": {"engine": "starlark", "version": 4},
 	"execute": [],
 
-	// Each theme defines the complete visual style users choose from.
-	// Fields:
+	// The four bundled themes are colour swatches, deliberately
+	// standardised on every axis except hue: same comfortable spacing,
+	// same 0.375rem border_radius, same 0.15 chroma, same -5 hue_bg
+	// offset, same backgrounds-on. Density, radius, font, font size,
+	// and background visibility are each their own user preference, so
+	// users mix and match orthogonally instead of accepting a bundled
+	// identity.
+	//
+	// Theme manifest fields (see AppTheme in core/server/apps.go):
 	//   id            — unique identifier (used in user preferences)
 	//   label         — i18n key resolved from labels/<lang>.conf
 	//   hue           — primary color hue in OKLCH color space (0–360)
 	//   chroma        — color saturation (0 = grey, ~0.2 = vivid)
 	//   hue_bg        — background/secondary hue (can differ from primary)
 	//   preview       — hex color shown in the preferences Theme button
-	//   spacing       — layout density: "compact" | "comfortable" | "spacious"
-	//   border_radius — corner rounding: "0rem" | "0.375rem" | "0.75rem" | "1.75rem"
-	//   background    — optional SVG filename served from the backgrounds/ folder
+	//   spacing       — default layout density: "compact" | "comfortable" | "spacious"
+	//   border_radius — default corner rounding: "0rem" | "0.375rem" | "0.75rem" | "1.75rem"
+	//   background    — optional SVG filename in backgrounds/ (light)
+	//   background_dark — optional SVG filename in backgrounds/ (dark)
+	//
+	// Other fields the schema supports but the bundled themes don't set:
+	//   font_sans / font_mono — for "design-pack" themes that bundle
+	//     typography with colour. Bundled themes inherit the platform
+	//     default (system UI sans / IBM Plex Mono), so font stays an
+	//     orthogonal user preference.
+	//   icon_mask / icon_background / icons — substrate for future
+	//     theme icon packs (Brutalist, Material, …). Resolution code is
+	//     in api_app_icons; no theme exercises these yet.
 	"themes": [
 		{
 			"id": "blue",
@@ -30,7 +47,7 @@
 			"preview": "#6366f1",
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-			"background": "blue.svg",
+"background": "blue.svg",
 			"background_dark": "blue-dark.svg"
 		},
 		{
@@ -42,7 +59,7 @@
 			"preview": "#14b8a6",
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-			"background": "teal.svg",
+"background": "teal.svg",
 			"background_dark": "teal-dark.svg"
 		},
 		{
@@ -54,7 +71,7 @@
 			"preview": "#f43f5e",
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-			"background": "rose.svg",
+"background": "rose.svg",
 			"background_dark": "rose-dark.svg"
 		},
 		{
@@ -66,7 +83,7 @@
 			"preview": "#8b5cf6",
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-			"background": "violet.svg",
+"background": "violet.svg",
 			"background_dark": "violet-dark.svg"
 		}
 	],
