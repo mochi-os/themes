@@ -11,7 +11,7 @@ clean:
 
 release:
 	rm -f $(RELEASE)/$(APP)_*.zip
-	zip -r $(RELEASE)/$(APP)_$(VERSION).zip app.json backgrounds icons labels
+	zip -r $(RELEASE)/$(APP)_$(VERSION).zip app.json backgrounds labels
 	git tag -a $(VERSION) -m "$(VERSION)" 2>/dev/null || true
 
 deploy:

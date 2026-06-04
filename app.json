@@ -2,7 +2,7 @@
 // Provides themes for the Mochi platform
 
 {
-	"version": "1.10",
+	"version": "1.11",
 	"label": "app.name",
 	"paths": ["themes"],
 
@@ -47,7 +47,7 @@
 			"preview": "#6366f1",
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-"background": "blue.svg",
+			"background": "blue.svg",
 			"background_dark": "blue-dark.svg"
 		},
 		{
@@ -59,7 +59,7 @@
 			"preview": "#14b8a6",
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-"background": "teal.svg",
+			"background": "teal.svg",
 			"background_dark": "teal-dark.svg"
 		},
 		{
@@ -71,7 +71,7 @@
 			"preview": "#f43f5e",
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-"background": "rose.svg",
+			"background": "rose.svg",
 			"background_dark": "rose-dark.svg"
 		},
 		{
@@ -83,7 +83,7 @@
 			"preview": "#8b5cf6",
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-"background": "violet.svg",
+			"background": "violet.svg",
 			"background_dark": "violet-dark.svg"
 		}
 	],
