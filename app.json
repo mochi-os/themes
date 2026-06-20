@@ -2,20 +2,30 @@
 // Provides themes for the Mochi platform
 
 {
-	"version": "1.11",
+	"version": "1.12",
 	"label": "app.name",
 	"paths": ["themes"],
 
 	"architecture": {"engine": "starlark", "version": 4},
 	"execute": [],
 
-	// The four bundled themes are colour swatches, deliberately
-	// standardised on every axis except hue: same comfortable spacing,
-	// same 0.375rem border_radius, same 0.15 chroma, same -5 hue_bg
-	// offset, same backgrounds-on. Density, radius, font, font size,
-	// and background visibility are each their own user preference, so
-	// users mix and match orthogonally instead of accepting a bundled
-	// identity.
+	// The five curated themes (blue, rose, terracotta, teal, steel)
+	// are colour swatches, standardised on spacing (comfortable),
+	// border_radius (0.375rem) and the -5 hue_bg offset, with backgrounds on.
+	// Each theme's primary is a deliberately balanced (hue, chroma,
+	// lightness): hue carries the identity, while chroma and the --primary-l
+	// lightness override (in overrides) are tuned per hue. Most sit at the
+	// same perceived saturation (C/L ~0.277, anchored to blue) — a fixed
+	// chroma instead clamps blue (sRGB ceiling 0.135 at its hue/L) and
+	// over-saturates the others. Two exceptions: teal is gamut-capped
+	// (cyan's sRGB chroma ceiling is ~0.09, so it can't reach 0.277 and
+	// reads as a muted teal), and steel is deliberately desaturated (C 0.055)
+	// to read as a calm slate-blue rather than a punchy primary. At the
+	// default L 0.488 a warm hue renders as a dark brown and teal is a dull
+	// dark cyan, so terracotta (0.55), teal (0.52) and steel (0.50) lift
+	// lightness. Density, radius,
+	// font, font size, and background visibility are each their own user
+	// preference, so users mix and match orthogonally.
 	//
 	// Theme manifest fields (see AppTheme in core/server/apps.go):
 	//   id            — unique identifier (used in user preferences)
@@ -37,12 +47,16 @@
 	//   icon_mask / icon_background / icons — substrate for future
 	//     theme icon packs (Brutalist, Material, …). Resolution code is
 	//     in api_app_icons; no theme exercises these yet.
+	//   overrides — map of raw CSS custom properties injected on <html>,
+	//     overriding theme.css. terracotta/matcha use it for --primary-l
+	//     (per-theme primary lightness). The picker honours --primary-l so
+	//     the swatch matches the rendered accent.
 	"themes": [
 		{
 			"id": "blue",
 			"label": "theme_blue",
 			"hue": 250,
-			"chroma": 0.15,
+			"chroma": 0.135,
 			"hue_bg": 245,
 			"preview": "#6366f1",
 			"spacing": "comfortable",
@@ -51,22 +65,10 @@
 			"background_dark": "blue-dark.svg"
 		},
 		{
-			"id": "teal",
-			"label": "theme_teal",
-			"hue": 185,
-			"chroma": 0.15,
-			"hue_bg": 180,
-			"preview": "#14b8a6",
-			"spacing": "comfortable",
-			"border_radius": "0.375rem",
-			"background": "teal.svg",
-			"background_dark": "teal-dark.svg"
-		},
-		{
 			"id": "rose",
 			"label": "theme_rose",
 			"hue": 350,
-			"chroma": 0.15,
+			"chroma": 0.135,
 			"hue_bg": 345,
 			"preview": "#f43f5e",
 			"spacing": "comfortable",
@@ -75,16 +77,40 @@
 			"background_dark": "rose-dark.svg"
 		},
 		{
-			"id": "violet",
-			"label": "theme_violet",
-			"hue": 270,
+			"id": "terracotta",
+			"label": "theme_terracotta",
+			"hue": 40,
 			"chroma": 0.15,
-			"hue_bg": 265,
-			"preview": "#8b5cf6",
+			"hue_bg": 35,
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-			"background": "violet.svg",
-			"background_dark": "violet-dark.svg"
+			"background": "terracotta.svg",
+			"background_dark": "terracotta-dark.svg",
+			"overrides": {"--primary-l": "0.55"}
+		},
+		{
+			"id": "teal",
+			"label": "theme_teal",
+			"hue": 185,
+			"chroma": 0.09,
+			"hue_bg": 180,
+			"spacing": "comfortable",
+			"border_radius": "0.375rem",
+			"background": "teal.svg",
+			"background_dark": "teal-dark.svg",
+			"overrides": {"--primary-l": "0.52"}
+		},
+		{
+			"id": "steel",
+			"label": "theme_steel",
+			"hue": 250,
+			"chroma": 0.055,
+			"hue_bg": 245,
+			"spacing": "comfortable",
+			"border_radius": "0.375rem",
+			"background": "steel.svg",
+			"background_dark": "steel-dark.svg",
+			"overrides": {"--primary-l": "0.50"}
 		}
 	],
 
