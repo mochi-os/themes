@@ -2,7 +2,7 @@
 // Provides themes for the Mochi platform
 
 {
-	"version": "1.12",
+	"version": "1.13",
 	"label": "app.name",
 	"paths": ["themes"],
 
@@ -33,7 +33,6 @@
 	//   hue           — primary color hue in OKLCH color space (0–360)
 	//   chroma        — color saturation (0 = grey, ~0.2 = vivid)
 	//   hue_bg        — background/secondary hue (can differ from primary)
-	//   preview       — hex color shown in the preferences Theme button
 	//   spacing       — default layout density: "compact" | "comfortable" | "spacious"
 	//   border_radius — default corner rounding: "0rem" | "0.375rem" | "0.75rem" | "1.75rem"
 	//   background    — optional SVG filename in backgrounds/ (light)
@@ -48,9 +47,11 @@
 	//     theme icon packs (Brutalist, Material, …). Resolution code is
 	//     in api_app_icons; no theme exercises these yet.
 	//   overrides — map of raw CSS custom properties injected on <html>,
-	//     overriding theme.css. terracotta/matcha use it for --primary-l
-	//     (per-theme primary lightness). The picker honours --primary-l so
-	//     the swatch matches the rendered accent.
+	//     overriding theme.css. Used for --primary-l (per-theme primary
+	//     lightness; terracotta/teal/steel) and --card-shadow / --card-border-width
+	//     (per-theme card surface treatment — no bundled theme currently sets
+	//     these, so all default to border+shadow; users pick Flat/Raised via the
+	//     "card" preference). The picker honours --primary-l for the swatch.
 	"themes": [
 		{
 			"id": "blue",
@@ -58,7 +59,6 @@
 			"hue": 250,
 			"chroma": 0.135,
 			"hue_bg": 245,
-			"preview": "#6366f1",
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
 			"background": "blue.svg",
@@ -70,7 +70,6 @@
 			"hue": 350,
 			"chroma": 0.135,
 			"hue_bg": 345,
-			"preview": "#f43f5e",
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
 			"background": "rose.svg",
