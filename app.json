@@ -2,7 +2,7 @@
 // Provides themes for the Mochi platform
 
 {
-	"version": "1.13",
+	"version": "1.14",
 	"label": "app.name",
 	"paths": ["themes"],
 
