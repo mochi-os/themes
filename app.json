@@ -6,7 +6,7 @@
 // Mochi Application Interface Exception - see license.txt and license-exception.md.
 
 {
-	"version": "1.16",
+	"version": "1.17",
 	"label": "app.name",
 	"paths": ["themes"],
 
@@ -39,8 +39,6 @@
 	//   hue_bg        — background/secondary hue (can differ from primary)
 	//   spacing       — default layout density: "compact" | "comfortable" | "spacious"
 	//   border_radius — default corner rounding: "0rem" | "0.375rem" | "0.75rem" | "1.75rem"
-	//   background    — optional SVG filename in backgrounds/ (light)
-	//   background_dark — optional SVG filename in backgrounds/ (dark)
 	//
 	// Other fields the schema supports but the bundled themes don't set:
 	//   font_sans / font_mono — for "design-pack" themes that bundle
@@ -64,9 +62,7 @@
 			"chroma": 0.135,
 			"hue_bg": 245,
 			"spacing": "comfortable",
-			"border_radius": "0.375rem",
-			"background": "blue.svg",
-			"background_dark": "blue-dark.svg"
+			"border_radius": "0.375rem"
 		},
 		{
 			"id": "rose",
@@ -75,9 +71,7 @@
 			"chroma": 0.135,
 			"hue_bg": 345,
 			"spacing": "comfortable",
-			"border_radius": "0.375rem",
-			"background": "rose.svg",
-			"background_dark": "rose-dark.svg"
+			"border_radius": "0.375rem"
 		},
 		{
 			"id": "terracotta",
@@ -87,8 +81,6 @@
 			"hue_bg": 35,
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-			"background": "terracotta.svg",
-			"background_dark": "terracotta-dark.svg",
 			"overrides": {"--primary-l": "0.55"}
 		},
 		{
@@ -99,8 +91,6 @@
 			"hue_bg": 180,
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-			"background": "teal.svg",
-			"background_dark": "teal-dark.svg",
 			"overrides": {"--primary-l": "0.52"}
 		},
 		{
@@ -111,8 +101,6 @@
 			"hue_bg": 245,
 			"spacing": "comfortable",
 			"border_radius": "0.375rem",
-			"background": "steel.svg",
-			"background_dark": "steel-dark.svg",
 			"overrides": {"--primary-l": "0.50"}
 		}
 	],
