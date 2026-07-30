@@ -103,9 +103,5 @@
 			"border_radius": "0.375rem",
 			"overrides": {"--primary-l": "0.50"}
 		}
-	],
-
-	"actions": {
-		"backgrounds": {"files": "backgrounds", "cache": "static", "public": true}
-	}
+	]
 }
