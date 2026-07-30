@@ -8,8 +8,16 @@
 {
 	"version": "1.21",
 	"label": "app.name",
+
+	// This app serves nothing over HTTP - /themes/ is a 404 - but the prefix is
+	// not spare. A theme's icon pack resolves to <theme path>/icons/<file>
+	// (api_app_icons in core/server/apps.go), so a theme that ships icons needs
+	// this path to be its own. Reserving it also stops another app claiming it.
 	"paths": ["themes"],
 
+	// Required by core even though this app ships no Starlark: app_read rejects
+	// any manifest whose engine is not "starlark", and the architecture version
+	// is what pins the manifest to an app API generation.
 	"architecture": {"engine": "starlark", "version": 4},
 	"execute": [],
 
@@ -57,7 +65,7 @@
 	"themes": [
 		{
 			"id": "blue",
-			"label": "theme_blue",
+			"label": "theme.blue",
 			"hue": 250,
 			"chroma": 0.135,
 			"hue_bg": 245,
@@ -66,7 +74,7 @@
 		},
 		{
 			"id": "rose",
-			"label": "theme_rose",
+			"label": "theme.rose",
 			"hue": 350,
 			"chroma": 0.135,
 			"hue_bg": 345,
@@ -75,7 +83,7 @@
 		},
 		{
 			"id": "terracotta",
-			"label": "theme_terracotta",
+			"label": "theme.terracotta",
 			"hue": 40,
 			"chroma": 0.15,
 			"hue_bg": 35,
@@ -85,7 +93,7 @@
 		},
 		{
 			"id": "teal",
-			"label": "theme_teal",
+			"label": "theme.teal",
 			"hue": 185,
 			"chroma": 0.09,
 			"hue_bg": 180,
@@ -95,7 +103,7 @@
 		},
 		{
 			"id": "steel",
-			"label": "theme_steel",
+			"label": "theme.steel",
 			"hue": 250,
 			"chroma": 0.055,
 			"hue_bg": 245,
