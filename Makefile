@@ -3,10 +3,15 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 # This file is part of Mochi, licensed under the GNU AGPL v3 with the
 # Mochi Application Interface Exception - see license.txt and license-exception.md.
+#
+# Written by claude/scripts/makefiles.py from one template for every app: change
+# the template there and rerun it, rather than editing this file.
 
 APP = $(notdir $(CURDIR))
 VERSION = $(shell grep -m1 '"version"' app.json | sed 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/')
 RELEASE = ../../release
+
+.PHONY: all clean release deploy
 
 all:
 
@@ -20,14 +25,3 @@ release:
 
 deploy:
 	../../claude/scripts/deploy.sh $(APP)
-
-commit:
-	git add -A && git commit -m "$(VERSION)" || true
-
-push:
-	git push --follow-tags
-
-everything: clean release deploy commit push
-
-test:
-	python3 ../../claude/scripts/p2p-test.py --app $(APP)
